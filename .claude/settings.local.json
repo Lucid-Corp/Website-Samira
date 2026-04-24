@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.lucidcorp.com)",
-      "WebFetch(domain:www.apple.com)"
+      "WebFetch(domain:www.apple.com)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

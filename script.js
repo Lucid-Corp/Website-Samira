@@ -35,6 +35,40 @@ if (track) {
   Array.from(track.children).forEach(card => track.appendChild(card.cloneNode(true)));
 }
 
+// Scroll zoom section
+const scrollZoomSection = document.getElementById('scrollZoom');
+const scrollZoomImg = document.getElementById('scrollZoomImg');
+
+if (scrollZoomSection && scrollZoomImg) {
+  window.addEventListener('scroll', () => {
+    const rect = scrollZoomSection.getBoundingClientRect();
+    const scrollable = scrollZoomSection.offsetHeight - window.innerHeight;
+    const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+    const scale = 2.5 - (1.5 * progress);
+    scrollZoomImg.style.transform = `scale(${scale})`;
+    if (progress > 0.85) {
+      scrollZoomSection.classList.add('zoomed');
+    } else {
+      scrollZoomSection.classList.remove('zoomed');
+    }
+  }, { passive: true });
+}
+
+// Tray tilt scroll animation
+const traySection = document.querySelector('.tray-tilt-section');
+if (traySection) {
+  const trayObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        traySection.classList.add('in-view');
+      } else {
+        traySection.classList.remove('in-view');
+      }
+    });
+  }, { threshold: 0.4 });
+  trayObserver.observe(traySection);
+}
+
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
