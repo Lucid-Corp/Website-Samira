@@ -836,7 +836,7 @@ body {
 
 .product-img {
   width: 100%;
-  height: 180px;
+  height: 260px;
   object-fit: cover;
   object-position: top center;
   display: block;
@@ -848,7 +848,7 @@ body {
 }
 
 .product-card--large .product-img {
-  height: 180px;
+  height: 260px;
 }
 
 /* ── CAPABILITIES ────────────────────────────────────────── */
