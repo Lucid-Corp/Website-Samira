@@ -161,7 +161,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: calc(var(--nav-h) + 60px) 24px 80px;
+  padding: calc(var(--nav-h) + 40px) 24px 60px;
   background: linear-gradient(180deg, #fff 0%, #f5f5f7 100%);
   position: relative;
   overflow: hidden;
@@ -358,17 +358,15 @@ body {
 .btn-lg { padding: 16px 40px; font-size: 17px; }
 
 /* ── BENEFITS ROW ────────────────────────────────────────── */
-.benefits-row {
-  padding: 40px 24px;
-  background: #fff;
-}
+.benefits-row { display: none; }
 
-.benefits-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+.hero-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 48px;
 }
 
 .benefit-card {
