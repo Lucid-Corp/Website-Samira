@@ -361,12 +361,17 @@ body {
 .benefits-row { display: none; }
 
 .hero-benefits {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 16px;
   width: 100%;
   max-width: 1100px;
   margin-top: 48px;
+}
+
+.hero-benefits .benefit-card {
+  flex: 1;
+  background: #fff;
 }
 
 .benefit-card {
